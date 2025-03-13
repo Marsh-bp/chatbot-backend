@@ -3,7 +3,7 @@ import User from "../models/users.js";
 import jwt from "jsonwebtoken";
 const login = async (req, res) => {
   const SECRET_KEY = process.env.AUTH_SECRET;
-  console.log(SECRET_KEY)AUTH_SECRET
+  console.log(SECRET_KEY)
   const { username, password } = req.body;
   try {
     const user = await User.findOne({ username });
