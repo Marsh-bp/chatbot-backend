@@ -10,7 +10,7 @@ export const deauthenticate = (req, res) => {
       sameSite: "none",
       maxAge: 0,
     });
-    return res.status(200).json({ message: "Logged out", username });
+    return res.status(200).json({ message: "Logged out"});
   } catch (err) {
     return res.status(403).json({ message: "Invalid token" });
   }
