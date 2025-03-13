@@ -2,7 +2,7 @@ import bcrypt from "bcryptjs";
 import User from "../models/users.js";
 import jwt from "jsonwebtoken";
 const login = async (req, res) => {
-  const SECRET_KEY = process.env.AUTH_SECERT;
+  const SECRET_KEY = process.env.AUTH_SECRET;
   console.log(SECRET_KEY)AUTH_SECRET
   const { username, password } = req.body;
   try {
