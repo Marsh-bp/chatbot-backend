@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 
-const SECRET_KEY = process.env.AUTH_SECERT;
+const SECRET_KEY = process.env.AUTH_SECRET;
 
 export const deauthenticate = (req, res) => {
   try {
