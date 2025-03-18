@@ -51,7 +51,14 @@ const app = express();
 
 // Enable CORS for frontend communication
 const corsOptions = {
-  origin: "*", // Change this to your Flutter app URL in production
+ origin: (origin, callback) => {
+    const allowedOrigins = ["https://genbot-1.vercel.app", "*"];
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, origin);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  }, // Change this to your Flutter app URL in production
   methods: "GET,POST,PUT,DELETE",
   allowedHeaders: "Content-Type",
   credentials: true,
